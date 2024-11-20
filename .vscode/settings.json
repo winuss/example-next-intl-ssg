@@ -1,0 +1,4 @@
+{
+  "i18n-ally.localesPaths": ["messages", "src/i18n"],
+  "liveServer.settings.port": 5501
+}

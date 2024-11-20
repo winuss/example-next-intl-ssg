@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 
@@ -7,7 +6,7 @@ export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export default function HomePage({
+export default function AboutPage({
   params: { locale },
 }: {
   params: { locale: string };
@@ -15,11 +14,10 @@ export default function HomePage({
   // Enable static rendering
   setRequestLocale(locale);
 
-  const t = useTranslations("HomePage");
+  const t = useTranslations("AboutPage");
   return (
     <div className="container">
       <h1 className="font-bold">{t("title")}</h1>
-      <Link href="/about">{t("about")}</Link>
     </div>
   );
 }
